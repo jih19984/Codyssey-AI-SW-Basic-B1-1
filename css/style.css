@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #2563eb;
+    --color-secondary: #ffffff;
+    --color-text: #1a1a1a;
+
+    --font-base: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-base);
+    line-height: 1.6;
+}
+
+[data-thema="dark"] {
+    --color-bg: #121212;
+    --color-text: #f1f1f1;
+}

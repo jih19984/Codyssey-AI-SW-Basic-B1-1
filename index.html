@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inho portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">inho</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="theme-toggle" aria-label="다크모드 전환">dark mode</button>
+        <button class="hamburger" aria-label="메뉴 열기">   
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>안녕하세요, inho입니다.</h1>
+            <p>웹의 기본기를 탄탄히 갖춘 개발자입니다.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="images/profile.jpeg" alt="inho's profile">
+                <div class="about-text">
+                    <p>저는 웹 개발에 passion을 가지고 있으며, 사용자 중심의 경험을 제공하는 데 집중하고 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript(ES6+)</li>
+                <li>Git / Github</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid" id="projects-container">
+                <!--JS가 로딩/카드 목록/에러/빈 상태를 여기 채워 넣음-->
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name">
+                    <span class="error-message" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email">
+                    <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">메시지</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                    <span class="error-message" id="message-error"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">전송</button>
+                <p class="success-message" id="form-success"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 inho, All rights reserved.</p>
+        <ul class="social-links">
+            <li>
+                <a href="https://github.com/jih19984" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+        </ul>
+    </footer>
+
+    <button class="scroll-top-btn" id="scroll-top-btn" aria-label="맨 위로 이동">↑</button>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

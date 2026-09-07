@@ -131,7 +131,7 @@ Codyssey-AI-SW-Basic-B1-1/
 - [x] GitHub Pages 배포
 - [x] 배포 URL에서 전체 기능 정상 동작 확인
 - [x] README에 소개/기술스택/배포URL 포함
-- [ ] 데스크톱/모바일/다크모드 스크린샷 첨부
+- [x] 데스크톱/모바일/다크모드 스크린샷 첨부
 
 ### 보너스 (선택)
 - [ ] 언어별 프로젝트 필터링 (`array.filter()`)
@@ -141,9 +141,9 @@ Codyssey-AI-SW-Basic-B1-1/
 
 ## 8. 스크린샷
 
-| 데스크톱 | 모바일 | 다크모드 |
+| 데스크톱 | 모바일 (라이트) | 모바일 (다크모드) |
 |---|---|---|
-| _(예정)_ | _(예정)_ | _(예정)_ |
+| ![데스크톱](screenshots/desktop.png) | ![모바일 라이트모드](screenshots/mobile-white.png) | ![모바일 다크모드](screenshots/mobile-dark.png) |
 
 ## 9. 개발/실행 방법
 

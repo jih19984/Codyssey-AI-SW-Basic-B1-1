@@ -96,56 +96,61 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeElements.forEach((el) => observer.observe(el));
 
-/* 이름, 메시지 필수값 검증 */
+/* 이름, 메시지 필수값 검증 logic */
+const validateName = () => {
+    if (!nameInput.value.trim()) {
+        nameError.textContent = '이름을 입력해주세요.';
+        return false;
+    }
+    nameError.textContent = '';
+    return true;
+};
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const validateEmail = () => {
+    if (!emailInput.value.trim()) {
+        emailError.textContent = '이메일을 입력해주세요.';
+        return false;
+    }
+    if (!emailPattern.test(emailInput.value)) {
+        emailError.textContent = '올바른 이메일 형식이 아닙니다.';
+        return false;
+    }
+    emailError.textContent = '';
+    return true;
+};
+
+const validateMessage = () => {
+    if (!messageInput.value.trim()) {
+        messageError.textContent = '메시지를 입력해주세요.';
+        return false;
+    }
+    messageError.textContent = '';
+    return true;
+};
+
+/* submit 검증 */
 contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const {name, email, message} = Object.fromEntries(new FormData(contactForm));
+    const isNameValid = validateName();
+    const isEmailValid = validateEmail();
+    const isMessageValid = validateMessage();
 
-    let isValid = true;
-
-    if (!name.trim()) {
-        nameError.textContent = '이름을 입력해주세요.';
-        isValid=false;
+    if (isNameValid && isEmailValid && isMessageValid) {
+        formSuccess.textContent = '문의가 성공적으로 전송되었습니다!';
+        formSuccess.classList.add('show');
+        contactForm.reset();
+    } else {
+        formSuccess.classList.remove('show');
     }
-    else {
-        nameError.textContent = '';
-    }
+});
 
-    if (!message.trim()) {
-        messageError.textContent = '메시지를 입력해주세요.';
-        isValid=false;
-    }
-    else {
-        messageError.textContent = '';
-    }
-
-/* 이메일 필수 값 형식 검증 */
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-if (!email.trim()) {
-    emailError.textContent = '이메일을 입력해주세요.';
-    isValid = false;
-}
-else if (!emailPattern.test(email)) {
-    emailError.textContent = '올바른 이메일 형식이 아닙니다.';
-    isValid = false;
-}
-else {
-    emailError.textContent = '';
-}
-
-/* 최종 isValid 확인 */
-if (isValid) {
-    formSuccess.textContent='문의가 성공적으로 전송되었습니다!';
-    formSuccess.classList.add('show');
-    contactForm.reset();
-}
-else {
-    formSuccess.classList.remove('show');
-}
-
-})
+/* input 검증 */
+nameInput.addEventListener('input', validateName);
+emailInput.addEventListener('input', validateEmail);
+messageInput.addEventListener('input', validateMessage);
 
 /* 로딩 상태 렌더링 */
 const renderLoading = () => {

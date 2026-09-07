@@ -100,7 +100,7 @@ Codyssey-AI-SW-Basic-B1-1/
 - [x] `const`/`let`만 사용 (`var` 금지)
 - [x] `addEventListener`만 사용 (인라인 `onclick` 금지)
 - [x] `querySelector`/`querySelectorAll`, `textContent`/`innerHTML`, `classList` 조작
-- [ ] `click`/`submit`/`scroll`/`input` 이벤트 처리, `preventDefault()` — `input` 이벤트는 아직 미구현 (현재 `click`/`submit`/`scroll`만 사용 중)
+- [x] `click`/`submit`/`scroll`/`input` 이벤트 처리, `preventDefault()`
 
 ### 인터랙션
 - [x] 햄버거 메뉴 토글

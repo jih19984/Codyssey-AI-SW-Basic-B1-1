@@ -49,3 +49,47 @@ FormData를 {name: "...", email: "...", message:"..."} 같은 평범한 객체 �
 
 ## const {name, email, message} = 객체
 구조분해 할당. 객체 안의 name, email, message 프로퍼티를 각각 같은 이름의 변수로 한 번에 꺼내는 문법
+
+## 정규표현식 (Regular Expression)
+문자열이 특정 패턴에 맞는지 검사하는 도구
+
+예시: 
+```js
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+/: 정규표현식은 슬래시로 감쌈
+^: 문자열 시작
+[^\s@]+: 공백(\s) 아니고 @도 아닌 문자가 1개 이상
+@: 골뱅이 문자 그대로
+[^\s@]+: 다시 공백, @ 아닌 문자 1개 이상
+\.: 점 그대로 (그냥 점은 정규식에서 아무 문자를 뜻함)
+[^\s@]+: 공백, @ 아닌 문자 1개 이상
+$: 문자열 끝
+
+.test(): RegExp 객체의 메서드 중 하나로, test한 결과를 true, false 반환
+```
+
+## .innerHTML
+자바스크립트에서 어떤 요소 안의 HTML 콘텐츠를 읽거나 통째로 바꿀 수 있는 속성
+textContent와 달리 <b>, <p> 등이 실제 요소로 렌더링
+
+## async function
+이 함수 안에서 await를 쓸 수 있게 해주는 표시. "이 함수는 시간이 걸리는 작업을 포함한다."
+
+## await fetch(url)
+해당 url로 네트워크 요청을 보내고, 응답이 올 때까지 기다렸다가 다음 줄로 진행.
+await가 없으면 응답이 오기도 전에 다음 코드가 먼저 실행됨.
+
+## response.ok
+HTTP 상태 코드가 200번대면 true, 아니면 (404, 403, 500 등) false
+
+## throw new Error('메시지')
+에러를 의도적으로 발생시키고, 이후 catch 블록으로 바로 넘어간다.
+
+##  try {...} catch (error) {...}
+try 안에서 에러가 나면 {네트워크 끊김, throw, JSON 파싱 실패 등} 전체가 멈추지 않고 catch로 넘어가서 처리함
+
+## 널 병합 연산자 ??
+```js
+const value = a ?? b;
+```
+a가 null or undefined일 때만 b를 사용
